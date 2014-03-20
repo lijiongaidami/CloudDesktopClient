@@ -8,7 +8,7 @@ public class Rdesktop {
 		String shellPath = System.getProperty("user.dir")
 				+ "/shellResource/rdp.sh";
 		String cmd = String.format("bash %s %s %s %s", shellPath,
-				"192.168.1.139", name, password);
+				ip, name, password);
 		try {
 			Runtime.getRuntime().exec(cmd);
 		} catch (IOException e) {
