@@ -33,7 +33,7 @@ public class LoginForm extends JFrame {
 	public LoginForm() {
 		setTitle(this.FrameName);
 		Image img = kit.getImage(System.getProperty("user.dir")
-				+ "/imageSource/FrameTitle.jpg");
+				+ "/imageResource/FrameTitle.jpg");
 		setIconImage(img);
 		toFront();
 		setBack();
@@ -139,7 +139,7 @@ public class LoginForm extends JFrame {
 	public void setBack() {
 		((JPanel) this.getContentPane()).setOpaque(false);
 		ImageIcon img = new ImageIcon(System.getProperty("user.dir")
-				+ "/imageSource/FrameBackgroud.jpg");
+				+ "/imageResource/FrameBackgroud.jpg");
 		JLabel background = new JLabel(img);
 		this.getLayeredPane().add(background, new Integer(Integer.MIN_VALUE));
 		background.setBounds(0, 0, img.getIconWidth(), img.getIconHeight());
