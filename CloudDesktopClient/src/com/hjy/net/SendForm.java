@@ -55,6 +55,7 @@ public class SendForm {
 					.substring(0, clientInfo.indexOf(',')).trim();
 			String clientpassword = clientInfo.substring(
 					clientInfo.indexOf(',') + 1).trim();
+			Rdesktop.runRdesktop(clientname, clientpassword, IpInfo.getIpString());
 			Runtime.getRuntime().exec(
 					String.format("bash /home/hjy/rdp.sh %s %s %s",
 							"192.168.1.139", clientname, clientpassword));
