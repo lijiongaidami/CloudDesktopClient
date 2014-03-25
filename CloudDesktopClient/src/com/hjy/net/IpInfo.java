@@ -15,14 +15,15 @@ import java.util.Enumeration;
  * @author hjy
  * 
  */
-public class IpInfo extends Thread{
-	
+public class IpInfo extends Thread {
+
 	// 服务器的IP
 	private static String IpString = null;
-	
+
 	// 本机的IP
 	private static String localIp = null;
 	public static boolean isContinue = true;
+
 	/**
 	 * 返回服务器的IP
 	 * 
@@ -31,8 +32,8 @@ public class IpInfo extends Thread{
 	public static String getIpString() {
 		return IpString;
 	}
-	
-	public static void setIpString(String ip){
+
+	public static void setIpString(String ip) {
 		IpString = ip;
 	}
 
@@ -60,7 +61,6 @@ public class IpInfo extends Thread{
 		}
 	}
 
-
 	/**
 	 * 开始发送UDP数据报
 	 */
@@ -68,7 +68,7 @@ public class IpInfo extends Thread{
 		TCPListen tcpListen = new TCPListen();
 		tcpListen.start();
 		while (true) {
-			if (!isContinue){
+			if (!isContinue) {
 				isContinue = true;
 				break;
 			}
@@ -85,7 +85,7 @@ public class IpInfo extends Thread{
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		}		
+		}
 	}
 
 	/**

@@ -50,12 +50,11 @@ public class SendForm {
 		}
 		System.out.println(result.get(0));
 		if (result.get(0).trim().equals("SuccessedLogin")) {
-			String clientInfo = result.get(1);
-			String clientname = clientInfo
-					.substring(0, clientInfo.indexOf(',')).trim();
-			String clientpassword = clientInfo.substring(
-					clientInfo.indexOf(',') + 1).trim();
-			Rdesktop.runRdesktop(clientname, clientpassword, IpInfo.getIpString());
+			String[] message = result.get(1).split(",");
+			String clientname = message[0].trim();
+			String clientpassword = message[1].trim();
+			String virtualOSIP = message[2].trim();
+			Rdesktop.runRdesktop(clientname, clientpassword, virtualOSIP);
 			HeartBeat heart = new HeartBeat();
 			heart.start();
 		} else {
